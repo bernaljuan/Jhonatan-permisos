@@ -2,13 +2,12 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-use App\JhonatanPermission\Models\Role;
-use App\JhonatanPermission\Models\Permission;
+use App\Permission\Models\Role;
+use App\Permission\Models\Permission;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
-
-class JhonatanPermissionInfoSeeder extends Seeder
+class PermissionSeeder extends Seeder
 {
     /**
      * Run the database seeds.

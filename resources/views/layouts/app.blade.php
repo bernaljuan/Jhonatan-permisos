@@ -54,6 +54,10 @@
                                 </li>
                             @endif
                         @else
+                        <a class="navbar-brand" href="{{route('user.order')}}">My orders</a>
+                            <a class="navbar-brand" href="{{route('user.order.create')}}">Order Pizza</a>
+                            <!-- Admin Route -->
+                            <a class="navbar-brand" href="{{ route('admin.order') }}">Admin</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

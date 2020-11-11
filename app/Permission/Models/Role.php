@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JhonatanPermission\Models;
+namespace App\Permission\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +18,6 @@ class Role extends Model
     }
 
     public function permissions(){
-        return $this->belongsToMany('App\JhonatanPermission\Models\Permission')->withTimesTamps();
+        return $this->belongsToMany('App\Permission\Models\Permission')->withTimesTamps();
     }
 }

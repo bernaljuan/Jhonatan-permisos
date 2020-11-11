@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\JhonatanPermission\Models\Role;
-use App\JhonatanPermission\Models\Permission;
+use App\Permission\Models\Role;
+use App\Permission\Models\Permission;
 use Illuminate\Support\Facades\Gate;
 
 class RoleController extends Controller

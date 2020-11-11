@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\JhonatanPermission\Traits;
+namespace App\Permission\Traits;
 
 trait UserTrait {
 
@@ -10,7 +10,7 @@ trait UserTrait {
 
     public function roles(){
         
-        return $this->belongsToMany('App\JhonatanPermission\Models\Role')->withTimesTamps();
+        return $this->belongsToMany('App\Permission\Models\Role')->withTimesTamps();
 
     }
 

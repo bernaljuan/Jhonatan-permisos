@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\User;
-use App\JhonatanPermission\Models\Role;
-use App\JhonatanPermission\Models\Permission;
+use App\Permission\Models\Role;
+use App\Permission\Models\Permission;
 use Illuminate\Support\Facades\Gate;
 
 /*
@@ -41,3 +41,17 @@ Route::resource('/role', 'RoleController')->names('role');
 
 Route::resource('/user', 'UserController', ['except'=>[
     'create','store']])->names('user');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/order', 'UserOrderController@index')->name('user.order');
+        Route::get('/order/create', 'UserOrderController@create')->name('user.order.create');
+        Route::post('/order', 'UserOrderController@store')->name('user.order.store');
+        Route::get('/order/{order}', 'UserOrderController@show')->name('user.order.show');
+    });
+    
+    // Admin Routes - make sure you implement an auth layer here
+    Route::prefix('admin')->group(function () {
+        Route::get('/order', 'AdminOrderController@index')->name('admin.order');
+        Route::get('/order/edit/{order}', 'AdminOrderController@edit')->name('admin.order.edit');
+        Route::patch('/order/{order}', 'AdminOrderController@update')->name('admin.order.update');
+    });

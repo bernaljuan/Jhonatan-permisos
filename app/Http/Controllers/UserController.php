@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\JhonatanPermission\Models\Role;
+use App\Permission\Models\Role;
 use App\User;
 
 class UserController extends Controller

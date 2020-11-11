@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\JhonatanPermission\Traits\UserTrait;
+use App\Permission\Traits\UserTrait;
 
 class User extends Authenticatable
 {
