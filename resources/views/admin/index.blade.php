@@ -15,8 +15,8 @@
               @endif
 
               @if ($orders->count() == 0)
-                  <p>No orders yet.</p>
-                  <a href="{{ route('user.order.create') }}" class="btn btn-success">Order Pizza</a>
+                  <p>No hay ordenes aun.</p>
+                  <a href="{{ route('user.order.create') }}" class="btn btn-success">Ordenar pizza</a>
 
                   @else
                   <div class="table-responsive">
@@ -24,12 +24,12 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Customer Name</th>
-                          <th>Address</th>
-                          <th>Size</th>
-                          <th>Toppings</th>
-                          <th>Instructions</th>
-                          <th>Status</th>
+                          <th>A nombre de</th>
+                          <th>Direccion</th>
+                          <th>Tamaño</th>
+                          <th>Adiciones</th>
+                          <th>Instrucciones</th>
+                          <th>Editar estado</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -41,7 +41,9 @@
                               <td>{{ $order->size }}</td>
                               <td>{{ $order->toppings }}</td>
                               <td>{{ $order->instructions }}</td>
+                              @can('haveaccess','admin.order.edit')
                               <td><a href="{{ route('admin.order.edit', $order) }}">{{ $order->status->name }}</a></td>
+                              @endcan
                             </tr>
                         @endforeach
                       </tbody>

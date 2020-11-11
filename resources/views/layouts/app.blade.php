@@ -39,6 +39,12 @@
                     @can('haveaccess','user.index')
                         <li class="nav-item"> <a href="{{route('user.index')}}" class="nav-link"> User</a></li>
                     @endcan
+                    @can('haveaccess','articulos.index')
+                        <li class="nav-item"> <a href="{{route('articulos.index')}}" class="nav-link"> Articulos</a></li>
+                    @endcan
+                    @can('haveaccess','admin.order')
+                        <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
+                    @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -54,15 +60,15 @@
                                 </li>
                             @endif
                         @else
+
                         <a class="navbar-brand" href="{{route('user.order')}}">My orders</a>
                             <a class="navbar-brand" href="{{route('user.order.create')}}">Order Pizza</a>
                             <!-- Admin Route -->
-                            <a class="navbar-brand" href="{{ route('admin.order') }}">Admin</a>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

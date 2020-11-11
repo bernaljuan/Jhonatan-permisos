@@ -65,41 +65,41 @@ class PermissionSeeder extends Seeder
         
         //permission role
         $permission = Permission::create([
-            'name' => 'List role',
+            'name' => 'Lista de roles',
             'slug' => 'role.index',
-            'description' => 'A user can list role',
+            'description' => 'Listar roles',
         ]);
 
         $permission_all[] = $permission->id;
                 
         $permission = Permission::create([
-            'name' => 'Show role',
+            'name' => 'Ver rol',
             'slug' => 'role.show',
-            'description' => 'A user can see role',
+            'description' => 'Ver roles',
         ]);
 
         $permission_all[] = $permission->id;
                 
         $permission = Permission::create([
-            'name' => 'Create role',
+            'name' => 'Crear roles',
             'slug' => 'role.create',
-            'description' => 'A user can create role',
+            'description' => 'Crear roles',
         ]);
 
         $permission_all[] = $permission->id;
                 
         $permission = Permission::create([
-            'name' => 'Edit role',
+            'name' => 'Editar roles',
             'slug' => 'role.edit',
-            'description' => 'A user can edit role',
+            'description' => 'Editar roles',
         ]);
 
         $permission_all[] = $permission->id;
                 
         $permission = Permission::create([
-            'name' => 'Destroy role',
+            'name' => 'Eliminar rol',
             'slug' => 'role.destroy',
-            'description' => 'A user can destroy role',
+            'description' => 'Usuario puede eliminar rol',
         ]);
 
         $permission_all[] = $permission->id;
@@ -109,7 +109,7 @@ class PermissionSeeder extends Seeder
 
         //permission user
         $permission = Permission::create([
-            'name' => 'List user',
+            'name' => 'Listar usuarios',
             'slug' => 'user.index',
             'description' => 'A user can list user',
         ]);
@@ -155,6 +155,9 @@ class PermissionSeeder extends Seeder
             'slug' => 'userown.edit',
             'description' => 'A user can edit own user',
         ]);
+
+        
+
         
         
         /*$permission = Permission::create([
@@ -170,7 +173,51 @@ class PermissionSeeder extends Seeder
         //$roladmin->permissions()->sync( $permission_all);
 
 
+        $permission = Permission::create([
+            'name' => 'Lista de productos',
+            'slug' => 'articulos.index',
+            'description' => 'A user can list user',
+        ]);
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Crear articulo',
+            'slug' => 'articulos.create',
+            'description' => 'A user can see user',
+        ]);        
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Edit articulos',
+            'slug' => 'articulos.edit',
+            'description' => 'A user can edit user',
+        ]);
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Eliminar articulos',
+            'slug' => 'articulos.destroy',
+            'description' => 'A user can destroy user',
+        ]);
 
+
+
+        $permission = Permission::create([
+            'name' => 'Lista de ordenes pendientes',
+            'slug' => 'admin.order',
+            'description' => 'A user can list user',
+        ]);
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Editar estado de orden',
+            'slug' => 'admin.order.edit',
+            'description' => 'A user can see user',
+        ]);        
 
         
     }

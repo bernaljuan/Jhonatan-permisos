@@ -1,6 +1,6 @@
 <?php
 
-use App\Category;
+use App\categorias;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -12,16 +12,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create([
-            'nombre' => 'Android',
-            'slug' => 'android',
-
+        categorias::create([
+			'nombre' => 'Personal',
         ]);
-
-        Category::create([
-            'nombre' => 'iOS',
-            'slug' => 'ios',
-
-        ]);
+        
+        categorias::create([
+			'nombre' => 'Familiar',
+		]);
     }
 }

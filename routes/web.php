@@ -55,3 +55,8 @@ Route::resource('/user', 'UserController', ['except'=>[
         Route::get('/order/edit/{order}', 'AdminOrderController@edit')->name('admin.order.edit');
         Route::patch('/order/{order}', 'AdminOrderController@update')->name('admin.order.update');
     });
+
+    Route::resource('articulos', 'ArticulosController')->middleware('auth');
+
+    Route::get('/personal', 'ArticulosController@personal')->name('personal');
+    Route::get('/familiar', 'ArticulosController@familiar')->name('familiar');

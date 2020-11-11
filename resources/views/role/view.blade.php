@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h2>Edit Role</h2></div>
+                <div class="card-header"><h2>Editar Rol</h2></div>
 
                 <div class="card-body">
                    @include('custom.message')
@@ -18,7 +18,7 @@
 
                      <div class="container">
 
-                        <h3>Required data</h3>
+                        <h3>Datos requeridos</h3>
 
                          <div class="form-group">                            
                             <input type="text" class="form-control" 
@@ -45,7 +45,7 @@
 
                           <hr>
 
-                          <h3>Full Access</h3>
+                          <h3>Acceso total</h3>
                           <div class="custom-control custom-radio custom-control-inline">
                             <input disabled type="radio" id="fullaccessyes" name="full-access" class="custom-control-input" value="yes"
                             @if ( $role['full-access']=="yes") 
@@ -75,7 +75,7 @@
                           <hr>
 
 
-                          <h3>Permission List</h3>
+                          <h3>Lista de permisos</h3>
 
 
                           @foreach($permissions as $permission)
@@ -111,15 +111,8 @@
                           @endforeach
                           <hr>
                           
-                          <a class="btn btn-success" href="{{route('role.edit',$role->id)}}">Edit</a>
-                          <a class="btn btn-danger" href="{{route('role.index')}}">Back</a>
-
-
-
-
-
-
-
+                          <a class="btn btn-success" href="{{route('role.edit',$role->id)}}">Editar</a>
+                          <a class="btn btn-danger" href="{{route('role.index')}}">Regresar</a>
 
                      </div>
 

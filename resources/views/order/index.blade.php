@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header">My orders</div>
+				<div class="card-header">Mis ordenes</div>
 
 				<div class="card-body">
 					@if(session('message'))
@@ -15,8 +15,8 @@
 					@endif
 
 					@if($orders->count() == 0)
-					<p>No orders yet.</p>
-					<a href="{{route('user.order.create')}}" class="btn btn-success">Order Pizza</a>
+					<p>Aun no hay ordenes.</p>
+					<a href="{{route('user.order.create')}}" class="btn btn-success">Ordenar Pizza</a>
 					@else
 
 					<order-alert user_id="{{ auth()->user()->id }}"></order-alert>
@@ -26,11 +26,11 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>Address</th>
-									<th>Size</th>
-									<th>Toppings</th>
-									<th>Instructions</th>
-									<th>Status</th>
+									<th>Direccion</th>
+									<th>Tamaño</th>
+									<th>Adiciones</th>
+									<th>Instrucciones</th>
+									<th>Estado</th>
 								</tr>
 							</thead>
 							<tbody>

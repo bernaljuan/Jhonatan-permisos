@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    font-family: arial;
+    text-decoration: none;
+}
+
+header .btn{
+    background: red;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+    border: none;
+    top: 0;
+    border-radius: 2rem;
+}
+
+header{
+    width: 100%;
+    height: 650px;
+    background: url(../im/p2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    overflow: hidden; 
+    color: black;
+    text-align: center;
+}
+
+header .textos{
+    margin-top: 102px;
+}
+
+header .titulo{
+    font-size: 85px;
+}
+
+header .subtitulo{
+   font-size: 42px;
+   font-weight: 300;
+   margin-bottom: 32px;
+}
+
+header .boton{
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    border: 1px solid black;
+    color: black;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+}
+
+.sesgoabajo{
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 52px 0 ;
+}
+
+.sobre-nosotros{
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    height: auto;
+}
+
+.eslogan{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.parrafo{
+    margin-bottom: 13px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 24px;
+    color: rgb(71, 71, 71);
+}
+
+.acercade .boton{
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    border: 1px solid black;
+    color: black;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+}
+
+.sesgoarriba{
+    z-index: 10;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    border-width: 35vh 100vw 0 0;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.galeria{
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex; 
+    position: relative;
+}
+
+.imagenes{
+    width: 20%;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.encima{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(233, 49, 49, 0.61);
+}
+
+.encima h2{
+    position: relative;
+    top: 30%;
+    text-align: center;
+    color: white;  
+}
+
+.encima div{
+    position: relative;
+    display: block;
+    top: 33%;
+    width: 40px;
+    height: 5px;
+    background: white;
+    margin: auto;
+}
+
+.cards{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    margin: 20px 0;
+    width: 20%;
+    height: 250px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 4px 0 rgba(63, 62, 62, 0.486);
+}
+
+
+.cards img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+
+.sesgoabajo-unico{
+    z-index: 10;
+    position: relative;
+    bottom: 0;
+    left: 0%;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent rgb(158, 0, 0) transparent;
+}
+
+footer{
+    background-color: rgb(158, 0, 0);
+}
+
+.titulo-footer, .subtitulo-footer{
+    color: white;
+    text-align: center;
+}
+
+.titulo-footer{
+    font-size: 56px;
+}
+
+.subtitulo-footer{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
