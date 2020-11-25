@@ -29,7 +29,6 @@
                           <th>Tamaño</th>
                           <th>Adiciones</th>
                           <th>Instrucciones</th>
-                          <th>Producto</th>
                           <th>Editar estado</th>
                         </tr>
                       </thead>
@@ -42,10 +41,7 @@
                               <td>{{ $order->size }}</td>
                               <td>{{ $order->toppings }}</td>
                               <td>{{ $order->instructions }}</td>
-                              <td>{{ $order->articulos->Nombre }}</td>
-                              @can('haveaccess','admin.order.edit')
-                              <td><a href="{{ route('admin.order.edit', $order) }}">{{ $order->status->name }}</a></td>
-                              @endcan
+                              <td><a href="{{ route('proveedor.order.edit', $order) }}">{{ $order->status_proveedor->name }}</a></td>
                             </tr>
                         @endforeach
                       </tbody>

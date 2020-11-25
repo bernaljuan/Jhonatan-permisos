@@ -18,16 +18,31 @@
 						<div class="col-lg-12">
 							<form method="POST" action=" {{route('user.order.store')}} " class="form-horizontal">
 								{{csrf_field()}}
-
+							<div class="col-sm-10">
+								<label class="col-sm-8 control-label"><strong>Pizza:</strong></label>
+								
+								<img src="{{ asset('storage').'/'. $dato->foto }}"  class="img-thumbnail img-fluid" alt="" width="150">
+							</div>
+								<br>
 								<div class="form-group">
-									<label class="col-sm-8 control-label"><strong>Direecion</strong></label>
+									<input type="hidden" name="articulo_id" value="{{ $dato->id }}">
 									<div class="col-sm-10">
-										<input type="text" name="address" placeholder="Your address" class="form-control" autofocus>
+										<input type="text"  name="articulo_id" class="form-control"
+										value={{ $dato->Nombre }} disabled>
 									</div>
 								</div>
-
 								<div class="form-group">
-									<label class="col-sm-8 control-label"><strong>Size</strong></label>
+									<label class="col-sm-8 control-label"><strong>Direccion</strong></label>
+									<div class="col-sm-10">
+										<input type="text" name="address" placeholder="Tu direccion" class="form-control" autofocus>
+									</div>
+								</div>
+								
+
+
+								
+								<div class="form-group">
+									<label class="col-sm-8 control-label"><strong>Tamaño</strong></label>
 									<div class="col-sm-10">
 										<div>
 											<label><input type="radio" checked="" name="size" value="medium" id="medium"> Medio </label>
@@ -44,7 +59,7 @@
 								<div class="hr-line-dashed"></div>
 
 								<div class="form-group">
-									<label class="col-sm-8 control-label"><strong>Toppings</strong></label>
+									<label class="col-sm-8 control-label"><strong>Adiciones</strong></label>
 									<div class="col-sm-10">
 										<label class="checkbox-inline">
 											<input type="checkbox" name="toppings[]" value="pepperoni" id="pepperoni"> Pepperoni
@@ -70,7 +85,7 @@
 								<div class="form-group">
 									<label class="col-sm-8 control-label"><strong>Instrucciones</strong></label>
 									<div class="col-sm-10">
-										<input type="text" name="instructions" placeholder="Special instructions here" class="form-control">
+										<input type="text" name="instructions" placeholder="Instrucciones especiales" class="form-control">
 									</div>
 								</div>
 

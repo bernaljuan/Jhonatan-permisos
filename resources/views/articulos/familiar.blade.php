@@ -10,8 +10,8 @@
     <body>  
         <header>
             <div class="textos">
-                <a href="{{ url('/') }}" class="btn">Inicio</a>
-                <a href="{{route ('personal') }}" class="btn">Personal</a>
+                <a href="{{ url('/') }}" class="btn"><h3>Inicio</h3></a>
+                <a href="{{route ('personal') }}" class="btn"><h3>Personal</h3></a>
                 <h1 class="titulo">Pizza Shop</h1>
                 <h3 class="subtitulo">El mejor sitio web de pizzas</h3>
                 <a href="{{ route('login') }}" class="boton">Ingresar</a>
@@ -40,7 +40,7 @@
                         <div class="card-body producto">
                             <center><h2 class="card-title">{{ $articulo->Nombre }}</h2>
                             <h4 class="card-text pre">$ {{ $articulo->Precio }}</h4>
-                            <a href="#" class="btn col-12 btn-danger com p-3">Comprar</a></center>
+                            <a href="{{ route('user.order.create', $articulo) }}" class="btn col-12 btn-danger com p-3">Comprar</a></center>
                         </div>
                     </div>
                 @endforeach 

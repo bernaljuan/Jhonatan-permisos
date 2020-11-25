@@ -10,14 +10,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/submit.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    @can('haveaccess','role.index')
+                        @can('haveaccess','role.index')
                         <li class="nav-item"> <a href="{{route('role.index')}}" class="nav-link"> Role</a></li>
                     @endcan
                     @can('haveaccess','user.index')
@@ -45,6 +47,9 @@
                     @can('haveaccess','admin.order')
                         <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
                     @endcan
+                    @can('haveaccess','proveedor.order')
+                    <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Proveedor </a></li>
+                     @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -60,15 +65,17 @@
                                 </li>
                             @endif
                         @else
-
-                        <a class="navbar-brand" href="{{route('user.order')}}">My orders</a>
+                            <a class="navbar-brand" href="{{route('user.order')}}">My orders</a>
                             <a class="navbar-brand" href="{{route('user.order.create')}}">Order Pizza</a>
                             <!-- Admin Route -->
-                            
+
+                            @include('partials.notifications-dropdown')
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -91,5 +98,10 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/submit.js') }}" defer></script>
+    @yield('js')
 </body>
 </html>

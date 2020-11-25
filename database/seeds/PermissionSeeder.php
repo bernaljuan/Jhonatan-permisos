@@ -217,7 +217,13 @@ class PermissionSeeder extends Seeder
             'name' => 'Editar estado de orden',
             'slug' => 'admin.order.edit',
             'description' => 'A user can see user',
-        ]);        
+        ]);
+        
+        $permission = Permission::create([
+            'name' => 'Lista de ordenes proveedor',
+            'slug' => 'proveedor.order',
+            'description' => 'A user can list user',
+        ]);
 
         
     }

@@ -1,73 +1,56 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<link rel="stylesheet" href="css/login.css">
+<body class="body-login">
+    <div class="container-bar">
+        <input type="checkbox" id="btn-social">
+            <div class="icon-social">
+                <a href="{{ url('/') }}" class="icon-pinterest fab fa-pinterest">
+                    <h3>volver</h3>
+                    <span class="title">Pagina principal</span>
+                </a>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    <form method="POST" action="{{ route('login') }}">
+        <div class="form-login form-login2">
+            <center><a href="{{ route('register') }}" class="l"><h3>Registrarse</h3></a></center><br><br>
+            <h1 class="titulo-login">Iniciar Sesión</h1>
+                @csrf
+               <div class="grupo-login">
+                    <input id="email" type="text" class="input-login form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <label for="" class="label-login">Correo</label>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ 'Los datos no coinciden' }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="grupo-login">
+                    <input id="password" type="password" class=" input-login form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <label for="" class="label-login">Contraseña</label>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ "El correo debe tener algun @"}}</strong>
+                        </span>
+                   @enderror
+                </div>
+                <div class="form-check">                   
+                    <center>
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="remember">
+                                {{ __('Recordarme') }}
+                        </label>
+                    </center>
+                </div>
+                <button type="submit" class="boton-login">
+                    {{ __('Iniciar Sesión') }}
+                </button>
+
+                @if (Route::has('password.request'))
+                <center>    
+                    <a class="btn l btn-link" href="{{ route('password.request') }}">
+                        {{ __('Olvido su contraseña ?') }}
+                    </a>
+                </center>
+                @endif
+                           
+            </form>
+</body>

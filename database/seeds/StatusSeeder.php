@@ -12,23 +12,23 @@ class StatusSeeder extends Seeder
      */
     public function run() {
 		Status::create([
-			'name' => 'Order Place',
+			'name' => 'Orden recibida',
 			'percent' => 10,
 		]);
 		Status::create([
-			'name' => 'Prep',
+			'name' => 'En preparacion',
 			'percent' => 30,
 		]);
 		Status::create([
-			'name' => 'Bake',
+			'name' => 'Terminando preparacion',
 			'percent' => 50,
 		]);
 		Status::create([
-			'name' => 'Quality Check',
+			'name' => 'En camino',
 			'percent' => 70,
 		]);
 		Status::create([
-			'name' => 'Out for Delivery',
+			'name' => 'Tu pedido ha llegado',
 			'percent' => 100,
 		]);
 	}

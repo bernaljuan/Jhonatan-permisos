@@ -24,7 +24,7 @@ class ArticulosController extends Controller
 
     public function personal()
     {
-        $articulos = Articulos::select('Nombre', 'categoria_id', 'foto', 'Precio')
+        $articulos = Articulos::select('id','Nombre', 'categoria_id', 'foto', 'Precio')
             ->where('categoria_id', '=', 1)
             ->get();
         return view('articulos.personal', compact('articulos'));

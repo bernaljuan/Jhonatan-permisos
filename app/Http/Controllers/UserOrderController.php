@@ -1,21 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Articulos;
 use App\Order;
 use Illuminate\Http\Request;
 
 class UserOrderController extends Controller {
 	public function index() {
 		$user = auth()->user();
-		$orders = Order::with('status')->where('user_id', $user->id)->get();
+		$orders = Order::with(['articulos', 'status'])
+		->where('user_id', $user->id)->get();
 		// $orders = Order::has('status')->where('user_id', $user->id)->get();
 		return view('order.index', compact('user', 'orders'));
 	}
 
 	public function create() {
-		return view('order.create');
-	}
-
+		//dd(request()->all());
+		$dato = Articulos::findOrFail(request()->id);
+		//dd($datos);
+		return view('order.create', compact('dato'));	
+	}	
+	
 	public function store(Request $request) {
 		$request->validate([
 			'address' => 'required',
@@ -24,13 +30,14 @@ class UserOrderController extends Controller {
 
 		$order = Order::create([
 			'user_id' => auth()->user()->id,
+			'articulo_id' => $request->articulo_id,
 			'address' => $request->address,
 			'size' => $request->size,
 			'toppings' => implode(', ', $request->toppings),
 			'instructions' => $request->instructions,
 		]);
 
-		return redirect()->route('user.order.show', $order)->with('message', 'Order received');
+		return redirect()->route('user.order.show', $order)->with('message', 'Orden recibida');
 	}
 	/**
 	 * Display the specific resource
