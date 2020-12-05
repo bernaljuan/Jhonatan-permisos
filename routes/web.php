@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\User;
 use App\Permission\Models\Role;
-use App\Permission\Models\Permission;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use App\Permission\Models\Permission;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,10 @@ Route::resource('/user', 'UserController', ['except'=>[
         Route::patch('/order/{order}', 'ProveedorOrderController@update')->name('proveedor.order.update');
     });
 
-    Route::resource('articulos', 'ArticulosController')->middleware('auth');
+    Route::resource('posts', 'PostController')->middleware('auth');
 
+    Route::resource('articulos', 'ArticulosController')->middleware('auth');
+    Route::resource("productos", "ProductosController")->middleware('auth');
+    Route::resource("products", "ProductController")->middleware('auth');
     Route::get('/personal', 'ArticulosController@personal')->name('personal');
     Route::get('/familiar', 'ArticulosController@familiar')->name('familiar');
