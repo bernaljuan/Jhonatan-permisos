@@ -33,6 +33,15 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function personal()
+    {
+        $posts = Posts ::select('id','nombre', 'precio_venta', 'foto')
+            ->where('categoria_id', '=', 1)
+            ->get();
+        return view('posts.personal', compact('posts'));
+    }
+
     public function store(Request $request)
     {
        $product = new Product($request->input());

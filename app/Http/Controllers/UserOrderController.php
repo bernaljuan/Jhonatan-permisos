@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Articulos;
 use App\Order;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class UserOrderController extends Controller {
 
 	public function create() {
 		//dd(request()->all());
-		$dato = Articulos::findOrFail(request()->id);
+		$dato = Post::findOrFail(request()->id);
 		//dd($datos);
 		return view('order.create', compact('dato'));	
 	}	
@@ -30,7 +31,7 @@ class UserOrderController extends Controller {
 
 		$order = Order::create([
 			'user_id' => auth()->user()->id,
-			'articulo_id' => $request->articulo_id,
+			'product_id' => $request->product_id,
 			'address' => $request->address,
 			'size' => $request->size,
 			'toppings' => implode(', ', $request->toppings),

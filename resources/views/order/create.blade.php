@@ -25,10 +25,10 @@
 							</div>
 								<br>
 								<div class="form-group">
-									<input type="hidden" name="articulo_id" value="{{ $dato->id }}">
+									<input type="hidden" name="product_id" value="{{ $dato->id }}">
 									<div class="col-sm-10">
-										<input type="text"  name="articulo_id" class="form-control"
-										value={{ $dato->Nombre }} disabled>
+										<input type="text"  name="product_id" class="form-control"
+										value={{ $dato->nombre }} disabled>
 									</div>
 								</div>
 								<div class="form-group">
@@ -36,11 +36,7 @@
 									<div class="col-sm-10">
 										<input type="text" name="address" placeholder="Tu direccion" class="form-control" autofocus>
 									</div>
-								</div>
-								
-
-
-								
+								</div>		
 								<div class="form-group">
 									<label class="col-sm-8 control-label"><strong>Tamaño</strong></label>
 									<div class="col-sm-10">

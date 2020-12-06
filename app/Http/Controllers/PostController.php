@@ -15,6 +15,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function personal()
+    {
+        $posts = Post ::select('id','nombre', 'foto')
+            ->where('categoria_id', '=', 1)
+            ->get();
+        return view('posts.personal', compact('posts'));
+    }
+     
     public function index()
     {
         $datos['posts'] = Post::paginate(5);

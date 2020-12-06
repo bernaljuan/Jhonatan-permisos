@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration {
 
 			// Laravel7
 			$table->foreignId('user_id')->constrained();
-			$table->integer('articulo_id')->unsigned();
+			$table->integer('product_id')->unsigned();
 			$table->string('address')->nullable();
 			$table->string('size')->nullable();
 			$table->string('toppings')->nullable();
@@ -30,7 +30,7 @@ class CreateOrdersTable extends Migration {
 			$table->foreignId('status_id')->unsigned()->default(1)->constrained();
 			$table->foreignId('status_proveedor_id')->unsigned()->default(1)->constrained();
 
-			$table->foreign('articulo_id')->references('id')->on('articulos');
+			$table->foreign('product_id')->references('id')->on('products');
 
 			
 			$table->timestamps();

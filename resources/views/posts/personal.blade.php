@@ -34,13 +34,12 @@
             </div>
                 <div class="container mt-5 mb-5">
             <div class="row">
-                @foreach($articulos as $articulo)
+                @foreach($posts as $post)
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12" >
-                        <img  src="{{ asset('storage').'/'. $articulo->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
+                        <img  src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
                         <div class="card-body producto">
-                            <center><h2 class="card-title">{{ $articulo->Nombre }}</h2>
-                            <h4 class="card-text pre">$ {{ $articulo->Precio }}</h4>
-                            <a href="{{route('user.order.create', ['id' => $articulo->id])}}" class="btn col-12 btn-danger com p-3">Ordenar</a></center>
+                            <center><h2 class="card-title">{{ $post->nombre }}</h2>
+                            <a href="{{route('user.order.create', ['id' => $post->id])}}" class="btn col-12 btn-danger com p-3">Ordenar</a></center>
                         </div>
                     </div>
                 @endforeach 

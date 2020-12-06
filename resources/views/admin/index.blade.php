@@ -42,7 +42,7 @@
                               <td>{{ $order->size }}</td>
                               <td>{{ $order->toppings }}</td>
                               <td>{{ $order->instructions }}</td>
-                              <td>{{ $order->articulos->Nombre }}</td>
+                              <td>{{ $order->products->nombre }}</td>
                               @can('haveaccess','admin.order.edit')
                               <td><a href="{{ route('admin.order.edit', $order) }}">{{ $order->status->name }}</a></td>
                               @endcan

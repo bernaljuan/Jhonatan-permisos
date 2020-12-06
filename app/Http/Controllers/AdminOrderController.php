@@ -5,26 +5,26 @@ namespace App\Http\Controllers;
 use App\Events\OrderStatusChangedEvent;
 use App\Order;
 use App\Status;
-use App\Articulos;
+use App\Product;
 use Illuminate\Http\Request;
 
 class AdminOrderController extends Controller
 {
     public function index()
     {   
-        $articulo = Articulos::all();
-        $orders = Order::with(['customer', 'status', 'articulos'])
+        $products = Product::all();
+        $orders = Order::with(['customer', 'status', 'products'])
         ->where('status_proveedor_id', '=', 2)
         ->get();
-        return view('admin.index', compact('orders', 'articulo'));
+        return view('admin.index', compact('orders', 'products'));
     }
 
     public function edit(Order $order)
     {
         $statuses = Status::all();
-        $articulos = Articulos::all();
+        $products = Product::all();
         $currentStatus = $order->status_id;
-        return view('admin.edit', compact('order', 'statuses', 'currentStatus', 'articulos'));
+        return view('admin.edit', compact('order', 'statuses', 'currentStatus', 'products'));
     }
 
     public function update(Request $request, Order $order)
