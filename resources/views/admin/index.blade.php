@@ -30,7 +30,7 @@
                           <th>Adiciones</th>
                           <th>Instrucciones</th>
                           <th>Producto</th>
-                          <th>Editar estado</th>
+                          <th>Editar estados</th>
                         </tr>
                       </thead>
                       <tbody>
