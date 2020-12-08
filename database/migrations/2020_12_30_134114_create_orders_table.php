@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration {
 			$table->string('size')->nullable();
 			$table->string('toppings')->nullable();
 			$table->string('instructions')->nullable();
+			$table->decimal("cantidad", 9, 0);
 			$table->foreignId('status_id')->unsigned()->default(1)->constrained();
 			$table->foreignId('status_proveedor_id')->unsigned()->default(1)->constrained();
 

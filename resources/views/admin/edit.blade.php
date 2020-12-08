@@ -27,6 +27,17 @@
                   </div>
 
                   <div class="form-group m-b-lg">
+                    <label for="" class="control-label col-lg-3"><strong>Cantidad</strong></label>
+                    <div class="col-lg-8">
+                      <div class="line-up-form">{{ $order->cantidad }}</div>
+                    </div>
+                  </div>
+
+                  
+
+                  <fieldset>
+
+                  <div class="form-group m-b-lg">
                     <label for="" class="control-label col-lg-3"><strong>Para entregar a:</strong></label>
                     <div class="col-lg-8">
                       <div class="line-up-form">{{ $order->customer->name }}</div>

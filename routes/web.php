@@ -68,5 +68,10 @@ Route::resource('/user', 'UserController', ['except'=>[
     Route::resource("products", "ProductController")->middleware('auth');
     Route::get('/personal', 'PostController@personal')->name('personal');
     Route::get('/familiar', 'ArticulosController@familiar')->name('familiar');
+
     Route::resource('articulos', 'ArticulosController')->middleware('auth');
-    Route::resource("productos", "ProductosController")->middleware('auth');
+
+
+    Route::get('products/{product}/add', 'ProductController@add')->name('products.add');
+    Route::put('products/{product}/add', 'ProductController@updateadd')->name('products.updateadd');
+    

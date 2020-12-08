@@ -30,6 +30,8 @@
                           <th>Adiciones</th>
                           <th>Instrucciones</th>
                           <th>Producto</th>
+                          <th>cantidad</th>
+                          <th>cantidad</th>
                           <th>Editar estados</th>
                         </tr>
                       </thead>
@@ -43,6 +45,8 @@
                               <td>{{ $order->toppings }}</td>
                               <td>{{ $order->instructions }}</td>
                               <td>{{ $order->products->nombre }}</td>
+                              <td>{{ $order->cantidad }}</td>
+                              <td>{{ $order->products->existencia }}</td>
                               @can('haveaccess','admin.order.edit')
                               <td><a href="{{ route('admin.order.edit', $order) }}">{{ $order->status->name }}</a></td>
                               @endcan

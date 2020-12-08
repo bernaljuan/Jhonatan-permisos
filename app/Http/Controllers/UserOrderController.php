@@ -36,6 +36,7 @@ class UserOrderController extends Controller {
 			'size' => $request->size,
 			'toppings' => implode(', ', $request->toppings),
 			'instructions' => $request->instructions,
+			'cantidad' => $request->cantidad,
 		]);
 
 		return redirect()->route('user.order.show', $order)->with('message', 'Orden recibida');

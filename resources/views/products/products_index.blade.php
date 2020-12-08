@@ -17,7 +17,7 @@
                         <th>Precio de venta</th>
                         <th>Utilidad</th>
                         <th>Existencia</th>
-
+                        <th>Agregar productos</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -31,6 +31,12 @@
                             <td>{{$product->precio_venta}}</td>
                             <td>{{$product->precio_venta - $product->precio_compra}}</td>
                             <td>{{$product->existencia}}</td>
+                            
+                            <td>
+                                <a class="btn btn-warning" href="{{route("products.add",[$product])}}">
+                                    <i class="fa fa-coffee"></i>
+                                </a>
+                            </td>
                             <td>
                                 <a class="btn btn-warning" href="{{route("products.edit",[$product])}}">
                                     <i class="fa fa-edit"></i>

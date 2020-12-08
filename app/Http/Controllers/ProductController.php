@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class ProductController extends Controller
 
     public function personal()
     {
-        $posts = Posts ::select('id','nombre', 'precio_venta', 'foto')
+        $posts = Post ::select('id','nombre', 'precio_venta', 'foto')
             ->where('categoria_id', '=', 1)
             ->get();
         return view('posts.personal', compact('posts'));
@@ -72,6 +73,14 @@ class ProductController extends Controller
         ]);
     }
 
+    public function add(Product $product)
+    {
+        $products = Product::all();
+        return view("products.products_add", ["product" => $product,
+    ],compact('products'));
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -82,6 +91,16 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->fill($request->input());
+        $product->saveOrFail();
+        return redirect()->route("products.index")->with("mensaje", "Producto actualizado");
+    }
+    
+    public function updateadd(Request $request, Product $product)
+    {
+
+        $product->fill($request->input());
+        $unidades_add = $request->input('unidades_add');
+        $product->existencia += $unidades_add;
         $product->saveOrFail();
         return redirect()->route("products.index")->with("mensaje", "Producto actualizado");
     }

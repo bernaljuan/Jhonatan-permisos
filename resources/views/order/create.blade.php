@@ -85,6 +85,13 @@
 									</div>
 								</div>
 
+								<div class="form-group">
+									<label class="col-sm-8 control-label"><strong>Cantidad</strong></label>
+									<div class="col-sm-10">
+										<input type="text" name="cantidad" placeholder="Cantidad" class="form-control" autofocus>
+									</div>
+								</div>	
+
 								<div class="hr-line-dashed"></div>
 
 								<div class="form-group">

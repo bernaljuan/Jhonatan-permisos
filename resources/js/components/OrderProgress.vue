@@ -8,6 +8,7 @@
       <strong>Order Status:</strong> {{ statusNew }} <br>
 
       <img src="/img/pizzaGif.gif" alt="delivery" v-if="progress >= 100">
+      
     </div>
 
   </div>
