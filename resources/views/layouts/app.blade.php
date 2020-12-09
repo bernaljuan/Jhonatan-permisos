@@ -41,8 +41,11 @@
                     @can('haveaccess','user.index')
                         <li class="nav-item"> <a href="{{route('user.index')}}" class="nav-link"> User</a></li>
                     @endcan
-                    @can('haveaccess','articulos.index')
-                        <li class="nav-item"> <a href="{{route('articulos.index')}}" class="nav-link"> Articulos</a></li>
+                    @can('haveaccess','products.index')
+                        <li class="nav-item"> <a href="{{route('products.index')}}" class="nav-link"> Productos</a></li>
+                    @endcan
+                    @can('haveaccess','posts.index')
+                        <li class="nav-item"> <a href="{{route('posts.index')}}" class="nav-link"> Postear</a></li>
                     @endcan
                     @can('haveaccess','admin.order')
                         <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
