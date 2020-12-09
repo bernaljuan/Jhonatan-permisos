@@ -15,7 +15,7 @@
                         <th>Descripción</th>
                         <th>Precio de compra</th>
                         <th>Precio de venta</th>
-                        <th>Utilidad</th>
+                        <th>Ganancia</th>
                         <th>Existencia</th>
                         <th>Agregar productos</th>
                         <th>Editar</th>

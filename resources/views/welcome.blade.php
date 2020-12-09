@@ -11,7 +11,7 @@
         <header>
             <div class="textos">
                 <a href="{{route ('personal') }}" class="btn"><h3>Personal</h3></a>
-                
+                <a href="{{route ('familiar') }}" class="btn"><h3>Personal</h3></a>
                 <h1 class="titulo">Pizza Shop</h1>
                 <h3 class="subtitulo">El mejor sitio web de pizzas</h3>
                 <a  href="{{ route('login') }}" class="boton">Ingresar</a>

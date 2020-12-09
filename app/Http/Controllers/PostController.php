@@ -19,10 +19,22 @@ class PostController extends Controller
 
     public function personal()
     {
-        $posts = Post ::select('id','nombre', 'foto')
+        $products = Product::all();
+        $posts = Post ::select()
             ->where('categoria_id', '=', 1)
+            ->get();  
+        return view('posts.personal', compact('posts', 'products'));
+        
+    }
+
+    public function familiar()
+    {
+
+        $products = Product::all();
+        $posts = Post ::select()
+            ->where('categoria_id', '=', 2)
             ->get();
-        return view('posts.personal', compact('posts'));
+        return view('posts.familiar', compact('posts'));
     }
      
     public function index()

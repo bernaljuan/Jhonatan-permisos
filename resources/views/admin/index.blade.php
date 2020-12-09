@@ -31,7 +31,7 @@
                           <th>Instrucciones</th>
                           <th>Producto</th>
                           <th>cantidad</th>
-                          <th>cantidad</th>
+                          <th>Existencia</th>
                           <th>Editar estados</th>
                         </tr>
                       </thead>

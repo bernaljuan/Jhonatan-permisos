@@ -14,8 +14,6 @@ class AdminOrderController extends Controller
 {
     public function index()
     {   
-
-
         $products = Product::all();
         $orders = Order::with(['customer', 'status', 'products'])
         ->where('status_proveedor_id', '=', 2)

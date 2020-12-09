@@ -67,7 +67,7 @@ Route::resource('/user', 'UserController', ['except'=>[
 
     Route::resource("products", "ProductController")->middleware('auth');
     Route::get('/personal', 'PostController@personal')->name('personal');
-    Route::get('/familiar', 'ArticulosController@familiar')->name('familiar');
+    Route::get('/familiar', 'PostController@familiar')->name('familiar');
 
     Route::resource('articulos', 'ArticulosController')->middleware('auth');
 

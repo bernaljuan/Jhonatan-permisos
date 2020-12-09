@@ -11,7 +11,7 @@
         <header>
             <div class="textos">
                 <a href="{{ url('/') }}" class="btn"><h3>Inicio</h3></a>
-                <a href="{{route ('personal') }}" class="btn"><h3>Personal</h3></a>
+                <a href="{{route ('personal') }}" class="btn"><h3>personal</h3></a>
                 <h1 class="titulo">Pizza Shop</h1>
                 <h3 class="subtitulo">El mejor sitio web de pizzas</h3>
                 <a href="{{ route('login') }}" class="boton">Ingresar</a>
@@ -34,13 +34,13 @@
             </div>
                 <div class="container mt-5 mb-5">
             <div class="row">
-                @foreach($articulos as $articulo)
+                @foreach($posts as $post)
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12" >
-                        <img  src="{{ asset('storage').'/'. $articulo->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
+                        <img  src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
                         <div class="card-body producto">
-                            <center><h2 class="card-title">{{ $articulo->Nombre }}</h2>
-                            <h4 class="card-text pre">$ {{ $articulo->Precio }}</h4>
-                            <a href="{{ route('user.order.create', $articulo) }}" class="btn col-12 btn-danger com p-3">Comprar</a></center>
+                            <center><h2 class="card-title">{{ $post->nombre }}</h2>
+                                <center><h2 class="card-title">{{ $post->products->precio_venta}}</h2>
+                            <a href="{{route('user.order.create', ['id' => $post->id])}}" class="btn col-12 btn-danger com p-3">Ordenar</a></center>
                         </div>
                     </div>
                 @endforeach 
@@ -53,6 +53,7 @@
                 <h3 class="subtitulo-footer">pizzasho12@gmail.com</h3>
                 <h3 class="subtitulo-footer">3022839680</h3>
             </div>
+       
         </footer>
     </body>
 </html>
