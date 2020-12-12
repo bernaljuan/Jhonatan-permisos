@@ -38,7 +38,7 @@
                 <div class="row">
                     <a href="{{ route('personal') }}" class="col-5"><button class="col-12 br p-3">Pizza personal</button></a>
                     <div class="col-2"></div>
-                    <a href="" class="col-5"><button class="col-12 br p-3">Pizza Familiar</button></a>
+                    <a href="{{ route('familiar') }}" class="col-5"><button class="col-12 br p-3">Pizza Familiar</button></a>
                 </div>
             </center>
             <section class="">
