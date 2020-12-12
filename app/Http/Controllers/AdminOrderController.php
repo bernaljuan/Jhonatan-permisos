@@ -44,6 +44,7 @@ class AdminOrderController extends Controller
             $id = $request->order->product_id;
             $product = Product::findOrFail($id);
             $product->existencia = $product->existencia - $order->cantidad;
+            dd($order);
             $product->saveOrFail();
 
 

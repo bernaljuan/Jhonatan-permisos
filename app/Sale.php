@@ -6,13 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    public function products()
-    {
-        return $this->hasMany("App\ProductSold", "id_venta");
+    protected $fillable = [
+        'user_id',
+        'order_id',
+    ];
+
+    public function customer() {
+		return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function User()
-    {
-        return $this->belongsTo("App\User", "user_id");
+    public function order() {
+		return $this->belongsTo('App\Order', 'order_id');
     }
+    
 }
