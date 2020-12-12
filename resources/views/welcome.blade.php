@@ -77,12 +77,12 @@
                     <img src="im/cajas.jpg" class="col-6 mt-3 mb-4">
                 </div>
             </section>   
-        <footer class="mt-5 row bg-danger p-2">
+        <footer class="mt-5 bg-danger p-2">
             <div class="col-12 bg-danger text-white">
-                <h2 class="subtitulo-footer">Pizza Shop</h2>
+                <h2 class="mb-2 pb-2">Pizza Shop</h2>
                 <h4 class="ml-2">pizzasho12@gmail.com</h4>
                 <h4 class="ml-2">3022839680</h4>
-                <p>&copy; Pizza Shop todos los derecchos reserbados</p>
+                <p class="ml-2">&copy; Pizza Shop todos los derecchos reserbados</p>
             </div>
         </footer>
     </body>

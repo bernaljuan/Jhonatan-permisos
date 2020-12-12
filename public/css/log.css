@@ -1,3 +1,28 @@
 body{
-        
+    background: url(../im/fondo.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.titulo{
+    border-top-right-radius:2rem;
+}
+
+.sub{
+   color: rgb(122, 122, 122); 
+}
+
+.l{
+    text-decoration: none;
+    color: rgb(122, 122, 122);
+}
+
+.inp{
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.formulario{
+    border-bottom-left-radius: 2rem;
 }
