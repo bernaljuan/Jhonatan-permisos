@@ -1,20 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="css/estilos2.css">
+<link rel="stylesheet" href="css/estilo2.css">
 <center><h1 class="mt-3">Pizzas</h1></center><hr>
-<div class="row">
-    <div class="row">
-        @foreach($posts as $post)
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12" >
-                <img  src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
-                <div class="card-body producto">
-                    <center><h2 class="card-title">{{ $post->nombre }}</h2>
-                    <center><h2 class="card-title">{{ $post->products->precio_venta}}</h2>
-                    <a href="{{route('user.order.create', ['id' => $post->id])}}" class="btn col-12 btn-danger com p-3">Ordenar</a></center>
+    <div class="container">
+        <div class="row">
+            @foreach($posts as $post)
+                <div class="card cad col-4">
+                    <img src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top im mt-3" alt="...">
+                    <center><h3 class="card-title">{{ $post->nombre }}</h3></center>
+                    <center><h3>$ {{ $post->products->precio_venta}}</h3></center>
+                    <a href="{{route('user.order.create', ['id' => $post->id])}}" ><button class="mb-3 br col-12 p-3">Pedir</button></a></center>
                 </div>
-            </div>
-        @endforeach 
-    </div>
-</div>    
+            @endforeach 
+        </div>
+    </div>   
 @endsection

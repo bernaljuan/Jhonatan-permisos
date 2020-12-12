@@ -21,7 +21,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-danger shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ ('home') }}">
                     Pizza Shop
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -65,7 +65,7 @@
                             @endif
                         @else
                             <a class="navbar-brand" href="{{route('user.order')}}">Mis Ordenes</a>
-                            <a class="navbar-brand" href="{{route('user.order.create')}}">Ordenar Pizza</a>
+                            <a class="navbar-brand" href="{{route('home')}}">Ordenar Pizza</a>
                             <!-- Admin Route -->
 
                             @include('partials.notifications-dropdown')

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="">
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
@@ -16,7 +17,7 @@
 
 					@if($orders->count() == 0)
 					<p>Aun no hay ordenes.</p>
-					<a href="{{route('user.order.create')}}" class="btn btn-success">Ordenar Pizza</a>
+					<a href="{{route('home')}}" class="btn btn-success">Ordenar Pizza</a>
 					@else
 
 					<order-alert user_id="{{ auth()->user()->id }}"></order-alert>

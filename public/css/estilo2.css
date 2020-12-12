@@ -6,10 +6,22 @@ body{
     background-color: red;
 }
 
+
+.cad{
+    border: none;
+    border-radius: 20px;
+    border: 1px solid red;
+}
+
 .br{
     background-color: red;
     color: white;
     border:none;
+    border-radius: 1rem;
+}
+
+.im{
+    height: 250px;
 }
 
 .menu{
