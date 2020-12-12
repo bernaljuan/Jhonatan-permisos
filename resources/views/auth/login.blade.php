@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/log.css">
+    <link rel="stylesheet" href="css/estilo2.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <div class="bg-danger text-white titulo col-4 mx-auto mt-5 p-3">
+    <div class="r text-white titulo col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mx-auto mt-5 p-3">
         <center><h1>Iniciar Sesión</h1></center>
     </div>
-    <form action="" class="col-4 mx-auto bg-white formulario" method="POST" action="{{ route('login') }}">
-        <center><h3 class="sub p-2">Pizza Shop</h3></center>
+    <form class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mx-auto bg-white formulario" method="POST" action="{{ route('login') }}">
+        <center><a href="{{ url('/') }}"><h3 class="sub p-2">Pizza Shop</h3></a></center>
         <center><a href="{{ route('register') }}" class="l"><h5>Registrarse</h5></a></center>
         @csrf
         <input id="email" type="text" class="col-12 inp @error('email') is-invalid @enderror" required autocomplete="email" autofocus name="email" value="{{ old('email') }}" col-12 inp mt-3 mb-3" placeholder="Email:">
@@ -37,7 +38,7 @@
             </center>
         </div>
         @if (Route::has('password.request'))
-        <button type="submit" class="btn btn-danger col-12 p-2 mb-3">Iniciar Sesión</button>
+        <button type="submit" class="br col-12 p-2 mb-3">Iniciar Sesión</button>
         <center><a href="{{ route('password.request') }}"><p class="l p-3">Olvido su contraseña?</p></a></center>
         @endif
     </form>

@@ -16,7 +16,7 @@
         <title>Pizza Shop</title>
     </head>
     <body>  
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger menu">
+        <nav class="navbar navbar-expand-lg navbar-dark r menu">
             <a class="navbar-brand" href="#"><h4>Pizza Shop</h4></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,12 +27,20 @@
                         <a class="nav-link" href="{{route('login')}}">Ingrersar<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Registrarse</a>
+                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                     </li>
                 </ul>
             </div>          
         </nav>
         <main>
+            <center><h1>Pizzas</h1></center><hr>
+            <center class="container mb-5">
+                <div class="row">
+                    <a href="{{ route('personal') }}" class="col-5"><button class="col-12 br p-3">Pizza personal</button></a>
+                    <div class="col-2"></div>
+                    <a href="" class="col-5"><button class="col-12 br p-3">Pizza Familiar</button></a>
+                </div>
+            </center>
             <section class="">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -77,8 +85,8 @@
                     <img src="im/cajas.jpg" class="col-6 mt-3 mb-4">
                 </div>
             </section>   
-        <footer class="mt-5 bg-danger p-2">
-            <div class="col-12 bg-danger text-white">
+        <footer class="mt-5 r p-2">
+            <div class="col-12 r text-white">
                 <h2 class="mb-2 pb-2">Pizza Shop</h2>
                 <h4 class="ml-2">pizzasho12@gmail.com</h4>
                 <h4 class="ml-2">3022839680</h4>

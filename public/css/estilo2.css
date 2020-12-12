@@ -2,6 +2,16 @@ body{
     font-family: sans-serif;
 }
 
+.r{
+    background-color: red;
+}
+
+.br{
+    background-color: red;
+    color: white;
+    border:none;
+}
+
 .menu{
     padding: 15px;
 }
