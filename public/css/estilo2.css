@@ -1,0 +1,27 @@
+body{
+    font-family: sans-serif;
+}
+
+.menu{
+    padding: 15px;
+}
+
+.titulo{
+    margin-top: 80px;
+    font-size: 50px;
+}
+
+.con{
+    margin-left: 60px;
+    nav-right: 60px;
+}
+
+.titulo2{
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+.parrafo{
+    font-size: 25px;
+    margin-top: 20px;
+}
