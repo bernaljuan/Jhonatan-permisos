@@ -31,6 +31,8 @@
 									<th>Tamaño</th>
 									<th>Adiciones</th>
 									<th>Instrucciones</th>
+									<th>Valor a pagar</th>
+
 									<th>Estado</th>
 								</tr>
 							</thead>
@@ -42,6 +44,7 @@
 										<td> {{$order->size}} </td>
 										<td> {{$order->toppings}} </td>
 										<td> {{$order->instructions}} </td>
+										<td> {{$order->products->precio_venta * $order->cantidad }}</td>
 										<td><a href="{{route('user.order.show', $order)}}">{{$order->status->name}}</a></td>
 									</tr>
 								@endforeach

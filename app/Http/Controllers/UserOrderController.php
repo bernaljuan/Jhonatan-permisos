@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UserOrderController extends Controller {
 	public function index() {
 		$user = auth()->user();
-		$orders = Order::with(['articulos', 'status'])
+		$orders = Order::with(['products', 'status'])
 		->where('user_id', $user->id)->get();
 		// $orders = Order::has('status')->where('user_id', $user->id)->get();
 		return view('order.index', compact('user', 'orders'));
