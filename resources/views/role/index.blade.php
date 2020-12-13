@@ -30,12 +30,7 @@
                 <td>{{ $role->name}}</td>
                 <td>{{ $role->slug}}</td>
                 <td>{{ $role->description}}</td>
-                <td>{{ $role['full-access']}}</td>                            
-                <td> 
-                  @can('haveaccess','role.show')
-                    <a class="btn btn-info" href="{{ route('role.show',$role->id)}}">Ver</a> 
-                  @endcan 
-                </td>  
+                <td>{{ $role['full-access']}}</td>                              
                 <td> 
                   @can('haveaccess','role.edit')
                     <a class="btn btn-success" href="{{ route('role.edit',$role->id)}}">Editar</a> 
