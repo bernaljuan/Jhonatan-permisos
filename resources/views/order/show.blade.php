@@ -1,39 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-	<div class="row justify-content-center">
-		<div class="col-md-8">
-			<div class="card">
-			<div class="card-header">Estado de pedido</div>
-
-			<div class="card-body">
-				@if(session('message'))
-				<div class="alert alert-success">
-					{{session('message')}}
-				</div>
-				@endif
-
-				<order-progress status="{{ $order->status->name}}" initial="{{ $order->status->percent }}" order_id="{{ $order->id }}" ></order-progress>
-
-				<order-alert user_id="{{ auth()->user()->id }}"></order-alert>
-			<hr>
-
-			<div class="order-details">
-				<strong>Orden ID: </strong> {{$order->id}} <br>
-				<strong>Tamaño: </strong>{{$order->size}} <br>
-				<strong>Adiciones: </strong>{{$order->toppings}} <br>
-				@if($order->instructions != '')
-				<strong>Instrucciones: </strong>{{$order->instructions}}
-				@endif
-			</div>
-
-			<br>
-			<a class="btn btn-primary" href="{{route('user.order')}}">Regresar a ordenes</a>
-
+<link rel="stylesheet" href="../css/estilo2.css">
+<link rel="stylesheet" href="../css/log.css">
+<div class="col-6 mx-auto mt-5 r titulo p-3">
+	<center><h1>Estado de orden</h1></center>
+</div>
+<div class="formulario col-6 mx-auto">
+	@if(session('message'))
+		<div class="alert alert-success">
+			{{session('message')}}
 		</div>
-		</div>
-		</div>
+	@endif
+	<order-progress class="p-2" status="{{ $order->status->name}}" initial="{{ $order->status->percent }}" order_id="{{ $order->id }}" ></order-progress>
+	<order-alert user_id="{{ auth()->user()->id }}"></order-alert><hr>
+	<div class="ml-3">
+		<strong>Orden ID: </strong> {{$order->id}} <br>
+		<strong>Tamaño: </strong>{{$order->size}} <br>
+		<strong>Adiciones: </strong>{{$order->toppings}} <br>
+		@if($order->instructions != '')
+		<strong>Instrucciones: </strong>{{$order->instructions}}
+		@endif
 	</div>
+	<hr>
+	<a href="{{route('user.order')}}"><button class="br p-2 col-12 mb-3">Regresar a Ordenes</button></a>
 </div>
 @endsection
