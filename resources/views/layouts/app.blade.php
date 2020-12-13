@@ -32,10 +32,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @can('haveaccess','role.index')
-                        <li class="nav-item"> <a href="{{route('role.index')}}" class="nav-link"> Role</a></li>
+                        <li class="nav-item"> <a href="{{route('role.index')}}" class="nav-link"> Roles</a></li>
                     @endcan
                     @can('haveaccess','user.index')
-                        <li class="nav-item"> <a href="{{route('user.index')}}" class="nav-link"> User</a></li>
+                        <li class="nav-item"> <a href="{{route('user.index')}}" class="nav-link"> Usuarios</a></li>
                     @endcan
                     @can('haveaccess','products.index')
                         <li class="nav-item"> <a href="{{route('products.index')}}" class="nav-link"> Productos</a></li>
@@ -47,7 +47,7 @@
                         <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
                     @endcan
                     @can('haveaccess','proveedor.order')
-                    <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Proveedor </a></li>
+                    <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Aprovar </a></li>
                      @endcan
                     </ul>
 
