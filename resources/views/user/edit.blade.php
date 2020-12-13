@@ -1,104 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="../../css/estilo2.css">
+<link rel="stylesheet" href="../../css/log.css">
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><h2>Edit User</h2></div>
-
-                <div class="card-body">
-                   @include('custom.message')
-
-
-                
-                    <form action="{{ route('user.update', $user->id)}}" method="POST">
-                     @csrf
-                     @method('PUT')
-
-                     <div class="container">
-
-                        <h3>Required data</h3>
-
-                         <div class="form-group">                            
-                            <input type="text" class="form-control" 
-                            id="name" 
-                            placeholder="Name"
-                            name="name"
-                            value="{{ old('name', $user->name)}}"
-                            >
-                          </div>
-                          <div class="form-group">                            
-                            <input type="text" 
-                            class="form-control" 
-                            id="email" 
-                            placeholder="email"
-                            name="email"
-                            value="{{ old('email' , $user->email)}}"
-                            >
-                          </div>
-                          
-                          <div class="form-group">                            
-                            <select  class="form-control"  name="roles" id="roles">
-                              @foreach($roles as $role)
-                                <option value="{{ $role->id }}"
-                                  @isset($user->roles[0]->name)
-                                    @if($role->name ==  $user->roles[0]->name)
-                                      selected
-                                    @endif
-                                  @endisset
-                                
-                                
-                                >{{ $role->name }}</option>
-                              @endforeach
-                            </select>
-                          </div>
-
-                          
-                          <hr>
-                          <input class="btn btn-primary" type="submit" value="Save">
-
-
-
-
-
-
-
-
-
-                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </form>
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
+    <div class="titulo r col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3 mx-auto">
+      <center><h1>Editar Usuario</h1></center>
     </div>
+    @include('custom.message')
+    <form action="{{ route('user.update', $user->id)}}" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 formulario mx-auto" method="POST">
+      @csrf
+      @method('PUT')
+      <input type="text" class="mt-3 mb-3 col-12 inp" id="name" placeholder="Name"name="name" value="{{ old('name', $user->name)}}">
+      <input type="text" class="mb-3 col-12 inp"  id="email" placeholder="email"name="email" value="{{ old('email' , $user->email)}}">
+      <select  class="col-12 mb-3 inp"  name="roles" id="roles">
+        @foreach($roles as $role)
+          <option value="{{ $role->id }}"
+            @isset($user->roles[0]->name)
+              @if($role->name ==  $user->roles[0]->name)
+                selected
+              @endif
+            @endisset
+          
+          
+          >{{ $role->name }}</option>
+        @endforeach
+      </select>
+      <input class="br p-2 mb-3 col-12" type="submit" value="Editar Usuario">
+    </form>
 </div>
 @endsection
