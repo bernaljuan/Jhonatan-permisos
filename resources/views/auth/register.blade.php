@@ -29,13 +29,13 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        <input id="password" type="text" class="mt-3 mb-3 inp col-12  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña:">
+        <input id="password" type="password" class="mt-3 mb-3 inp col-12  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña:">
         @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        <input id="password-confirm" name="password_confirmation" required autocomplete="new-password" type="text" class="mt-3 mb-3 inp col-12" placeholder="Confirmar Contraseña:">
+        <input id="password-confirm" name="password_confirmation" required autocomplete="new-password" type="password" class="mt-3 mb-3 inp col-12" placeholder="Confirmar Contraseña:">
         <button type="submit" class="br col-12 p-2 mb-4">Registrarse</button>
     </form>
 </body>
