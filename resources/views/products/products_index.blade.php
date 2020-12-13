@@ -40,7 +40,7 @@
                             </a>
                         </td>
                         <td>
-                            <a class="btn btn-warning" href="{{route("products.edit",[$product])}}">
+                            <a class="btn btn-success" href="{{route("products.edit",[$product])}}">
                                 Editar
                             </a>
                         </td>
