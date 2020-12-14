@@ -262,6 +262,15 @@ class PermissionSeeder extends Seeder
         ]);
         
 
+
+        $permission = Permission::create([
+            'name' => 'Lista de ventas',
+            'slug' => 'sales.index',
+            'description' => 'Lista de ventas',
+        ]);
+        
+        $permission_all[] = $permission->id;
+
         
     }
 }

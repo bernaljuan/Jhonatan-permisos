@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sale;
+use App\User;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -14,7 +15,10 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $sales = Sale::with(['customer'])   
+        ->get();
+        return view("sales.sales_index", compact('users' , 'sales'));
     }
 
     /**

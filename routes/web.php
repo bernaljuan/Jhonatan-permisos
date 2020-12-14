@@ -64,7 +64,7 @@ Route::resource('/user', 'UserController', ['except'=>[
     });
 
     Route::resource('posts', 'PostController')->middleware('auth');
-
+    Route::resource("sales", "SaleController")->middleware('auth');
     Route::resource("products", "ProductController")->middleware('auth');
     Route::get('/personal', 'PostController@personal')->name('personal');
     Route::get('/familiar', 'PostController@familiar')->name('familiar');
