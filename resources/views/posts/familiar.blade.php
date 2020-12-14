@@ -1,3 +1,8 @@
+
+
+
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,22 +21,6 @@
         <title>Pizza Shop</title>
     </head>
     <body>  
-        <nav class="navbar navbar-expand-lg navbar-dark r menu">
-            <a class="navbar-brand" href="{{ ('/') }}"><h4>Pizza Shop</h4></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('login')}}">Ingrersar<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
-                    </li>
-                </ul>
-            </div>          
-        </nav>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -84,3 +73,4 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/submit.js') }}" defer></script>
 </html>
+@endsection

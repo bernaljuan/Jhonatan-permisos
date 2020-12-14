@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -16,10 +17,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/submit.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo2.css">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-danger shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark r shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ ('home') }}">
                     Pizza Shop
@@ -43,9 +45,12 @@
                     @can('haveaccess','posts.index')
                         <li class="nav-item"> <a href="{{route('posts.index')}}" class="nav-link"> Publicar </a></li>
                     @endcan
-                    
                     @can('haveaccess','admin.order')
-                    <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
+                        <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
+                     @endcan
+                    
+                    @can('haveaccess','proveedor.order')
+                    <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Aprovar </a></li>
                      @endcan
                     </ul>
 
@@ -54,11 +59,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
