@@ -8,8 +8,13 @@
         <div class="titulo r col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 mx-auto mt-5 p-3">
             <center><h1>Ventas</h1></center>
         </div>
+       
         <div class="formulario p-3 col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 mx-auto">
-
+            @if (session('message'))
+            <div class="alert alert-success">
+              {{ session('message') }}
+            </div>
+        @endif
            
             <table class="table table-light col-12">
                 <thead>

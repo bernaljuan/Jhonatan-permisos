@@ -57,7 +57,7 @@ class AdminOrderController extends Controller
             $productoVendido->saveOrFail();
 
 
-            return back()->with('message', 'Orden preuba');
+            return redirect('/sales')->with('message', 'Venta realizada');
         } else {
             return back()->with('message', 'Orden actualizada');
         }
