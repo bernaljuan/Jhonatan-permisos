@@ -9,7 +9,10 @@
             <center><h1>Productos</h1></center>
         </div>
         <div class="formulario p-3 col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 mx-auto">
+            @can('haveaccess','products.create')
             <a href="{{route("products.create")}}"><button class="br col-12 mt-2 mb-2 p-2">Agregar Producto</button></a>
+                  @endcan
+           
             <table class="table table-light col-12">
                 <thead>
                 <tr>
@@ -29,28 +32,37 @@
                     <tr>
                         <td>{{$product->nombre}}</td>
                         <td>{{$product->descripcion}}</td>
-                        <td>{{$product->precio_compra}}</td>
-                        <td>{{$product->precio_venta}}</td>
-                        <td>{{$product->precio_venta - $product->precio_compra}}</td>
+                        <td>${{$product->precio_compra}}</td>
+                        <td>${{$product->precio_venta}}</td>
+                        <td>${{$product->precio_venta - $product->precio_compra}}</td>
                         <td>{{$product->existencia}}</td>
                         
                         <td>
+
+                            @can('haveaccess','products.add')
                             <a class="btn btn-warning" href="{{route("products.add",[$product])}}">
                                 Agregar
                             </a>
+                  @endcan
+                            
                         </td>
                         <td>
+                            @can('haveaccess','products.edit')
                             <a class="btn btn-success" href="{{route("products.edit",[$product])}}">
                                 Editar
                             </a>
+                  @endcan                            
                         </td>
                         <td>
                             <form action="{{route("products.destroy", [$product])}}" method="post">
                                 @method("delete")
                                 @csrf
+                                @can('haveaccess','products.destroy')
                                 <button type="submit" class="btn btn-danger">
                                     Eliminar
                                 </button>
+                  @endcan
+                                
                             </form>
                         </td>
                     </tr>

@@ -44,7 +44,6 @@
                 <img src="{{ asset('storage').'/'. $post->foto }}"  class="img-thumbnail img-fluid" alt="" width="150">
                 
                 
-                
                 </td>
                 <td>{{ $post->nombre }}</td>
                 <td>{{ $post->product->nombre }}</td>
@@ -52,10 +51,7 @@
                 <td>{{ $post->categoria->nombre }}</td>
     
                 <td>
-    
-                
-    
-    
+
                 @can('haveaccess','posts.edit')
                 <a class="btn btn-warning" href="{{ url('/posts/'.$post->id.'/edit') }}">                                
                     Editar
