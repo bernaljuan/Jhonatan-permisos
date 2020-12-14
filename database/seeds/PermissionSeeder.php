@@ -202,7 +202,16 @@ class PermissionSeeder extends Seeder
             'slug' => 'products.destroy',
             'description' => 'A user can destroy user',
         ]);
+        
+        $permission_all[] = $permission->id;
 
+        $permission = Permission::create([
+            'name' => 'Agregar existencia',
+            'slug' => 'products.add',
+            'description' => 'Agregar existencia',
+        ]);
+        
+        $permission_all[] = $permission->id;
 
 
         $permission = Permission::create([
@@ -217,6 +226,39 @@ class PermissionSeeder extends Seeder
             'name' => 'Editar estado de orden',
             'slug' => 'admin.order.edit',
             'description' => 'Editar estado de orden',
+        ]);
+
+
+
+
+        $permission = Permission::create([
+            'name' => 'Lista de publicaciones',
+            'slug' => 'posts.index',
+            'description' => 'Lista de publicaciones',
+        ]);
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Crear publicacion',
+            'slug' => 'posts.create',
+            'description' => 'Crear publicacion',
+        ]);        
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Editar publicaciones',
+            'slug' => 'posts.edit',
+            'description' => 'Editar publicaciones',
+        ]);
+        
+        $permission_all[] = $permission->id;
+        
+        $permission = Permission::create([
+            'name' => 'Eliminar publicacion',
+            'slug' => 'posts.destroy',
+            'description' => 'Eliminar publicacion',
         ]);
         
 
