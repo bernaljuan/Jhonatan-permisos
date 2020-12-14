@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../css/estilo.css">
 <link rel="stylesheet" href="../css/log.css">
 <div class="form-group">
+    <label for="">Id:</label>
         <select name="product_id" id="inputproducto_id" class="inp col-12 mt-3 mb-3"  >
             <option value=""> Escoja el producto </option>
             @foreach ($products as $product)
@@ -16,6 +17,7 @@
 
 
 <div class="form-group">
+    <label for="">Nombre:</label>
     <input type="text" class="col-12 inp mb-3  {{$errors->has('nombre')?'is-invalid':''  }}  " placeholder="Nombre:" name="nombre" id="nombre" 
     value="{{ isset($post->nombre)?$post->nombre:old('nombre') }}">
 {!! $errors->first('nombre','<div class="invalid-feedback">:message</div>') !!}
@@ -23,6 +25,7 @@
 
 
 <div class="form-group">
+    <label for="">Descipción:</label>
     <input type="text" class="col-12 mb-3 inp {{$errors->has('descripcion')?'is-invalid':''  }}  " placeholder="Descripcion:" name="descripcion" id="descripcion" 
     value="{{ isset($post->descripcion)?$post->descripcion:old('descripcion') }}">
     {!! $errors->first('descripcion','<div class="invalid-feedback">:message</div>') !!}
@@ -33,7 +36,7 @@
 
 
 <div class="form-group">
-
+    <label for="">Categoria</label>
     <select name="categoria_id" id="inputcategoria_id" class="col-12 mb-3 inp"  >
         <option value=""> Escoja la categoria </option>
         @foreach ($categorias as $categoria)
