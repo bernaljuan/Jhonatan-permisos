@@ -57,11 +57,6 @@ Route::resource('/user', 'UserController', ['except'=>[
         Route::patch('/order/{order}', 'AdminOrderController@update')->name('admin.order.update');
     });
 
-    Route::prefix('proveedor')->group(function () {
-        Route::get('/order', 'ProveedorOrderController@index')->name('proveedor.order');
-        Route::get('/order/edit/{order}', 'ProveedorOrderController@edit')->name('proveedor.order.edit');
-        Route::patch('/order/{order}', 'ProveedorOrderController@update')->name('proveedor.order.update');
-    });
 
     Route::resource('posts', 'PostController')->middleware('auth');
     Route::resource("sales", "SaleController")->middleware('auth');

@@ -29,7 +29,6 @@ class CreateOrdersTable extends Migration {
 			$table->string('instructions')->nullable();
 			$table->decimal("cantidad", 9, 0);
 			$table->foreignId('status_id')->unsigned()->default(1)->constrained();
-			$table->foreignId('status_proveedor_id')->unsigned()->default(1)->constrained();
 
 			$table->foreign('product_id')->references('id')->on('products');
 

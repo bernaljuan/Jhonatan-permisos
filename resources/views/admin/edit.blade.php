@@ -14,7 +14,7 @@
                   </div>
               @endif
 
-            <form action="{{ route('proveedor.order.update', $order) }}" class="col-12" id="update-order-status-form" method="POST">
+            <form action="{{ route('admin.order.update', $order) }}" class="col-12" id="update-order-status-form" method="POST">
               
               @csrf
               @method('PATCH')
@@ -57,7 +57,7 @@
                 <div class="form-group">
                   <label for="" class="control-label col-lg-3"><strong>Estado</strong></label>
                   <div class="controls col-md-8">
-                    <select name="status_proveedor_id" id="status_proveedor_id" class="col-12 inp">
+                    <select name="status_id" id="status_id" class="col-12 inp">
                       @foreach ($statuses as $status)
                           <option value="{{ $status->id }}" {{ (old("status", $currentStatus) == $status->id ? "selected":"") }}>{{ $status->name }}</option>
                       @endforeach
