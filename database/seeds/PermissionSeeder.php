@@ -256,9 +256,9 @@ class PermissionSeeder extends Seeder
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Editar publicaciones',
+            'name' => 'Eliminar publicacion',
             'slug' => 'posts.destroy',
-            'description' => 'Editar publicaciones',
+            'description' => 'Eliminar publicacion',
         ]);
         
 
