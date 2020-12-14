@@ -9,6 +9,9 @@ class Sale extends Model
     protected $fillable = [
         'user_id',
         'order_id',
+        'product',
+        'cantidad',
+        'total',
     ];
 
     public function customer() {

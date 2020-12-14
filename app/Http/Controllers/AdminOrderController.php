@@ -43,9 +43,18 @@ class AdminOrderController extends Controller
             $id = $request->order->product_id;
             $product = Product::findOrFail($id);
             $product->existencia = $product->existencia - $order->cantidad;
-            dd($order);
             $product->saveOrFail();
 
+            $productoVendido = new Sale();
+            $productoVendido->fill([
+                "user_id" => $order->user_id,
+                "order_id" => $order->id,
+                "product" => $product->nombre,
+                "cantidad" => $order->cantidad,
+                "total" => $order->products->precio_venta * $order->cantidad,
+            ]);
+            // Lo guardamos
+            $productoVendido->saveOrFail();
 
 
             return back()->with('message', 'Orden preuba');

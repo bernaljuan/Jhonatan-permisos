@@ -17,6 +17,9 @@ class CreateSalesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('order_id')->constrained();
+            $table->string("product");
+            $table->decimal("cantidad", 9, 0);
+            $table->decimal("total", 9, 0);
             $table->timestamps();
         });
     }
