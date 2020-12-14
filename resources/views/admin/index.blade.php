@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="../css/estilo2.css">
+<link rel="stylesheet" href="../css/log.css">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header">Admin Dashboard</div>
-
-            <div class="card-body">
-              @if (session('message'))
+      <div class="titulo r col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 p-2 mx-auto">
+        <center><h1>Ordenes</h1></center>
+      </div>
+      <div class="formulario col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 p-2 mx-auto">
+        @if (session('message'))
                   <div class="alert alert-success">
                     {{ session('message') }}
                   </div>
@@ -20,7 +20,7 @@
 
                   @else
                   <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-light col-12">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -56,9 +56,6 @@
                     </table>
                   </div>
               @endif
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 @endsection
