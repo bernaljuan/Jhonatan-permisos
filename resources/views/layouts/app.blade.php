@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Pizza Shop</title>
 
     <!-- Scripts -->
 
@@ -43,9 +43,7 @@
                     @can('haveaccess','posts.index')
                         <li class="nav-item"> <a href="{{route('posts.index')}}" class="nav-link"> Publicar </a></li>
                     @endcan
-                    @can('haveaccess','admin.order')
-                        <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
-                    @endcan
+                    
                     @can('haveaccess','proveedor.order')
                     <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Aprovar </a></li>
                      @endcan
