@@ -4,56 +4,83 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/estilo.css">
+        <link rel="stylesheet" href="css/estilo2.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+          <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <!-- Styles -->
+        <link href="{{ asset('css/submit.css') }}" rel="stylesheet">    
         <title>Pizza Shop</title>
     </head>
     <body>  
-        <header>
-            <div class="textos">
-                <a href="{{ url('/') }}" class="btn"><h3>Inicio</h3></a>
-                <a href="{{route ('personal') }}" class="btn"><h3>personal</h3></a>
-                <h1 class="titulo">Pizza Shop</h1>
-                <h3 class="subtitulo">El mejor sitio web de pizzas</h3>
-                <a href="{{ route('login') }}" class="boton">Ingresar</a>
-            </div>
-            <div class="sesgoabajo"></div>
-        </header> 
-        <main>
-            <section class="acercade">
-                <div class="contenedor">
-                    <h2 class="sobre-nosotros">Sobre Nosotros</h2>
-                    <h3 class="eslogan">Compra la mejor pizza.</h3>
-                    <p class="parrafo">Compra la pizza que quieras al tamaño que quieras y el sabor que quieras aqui. Contarás con los mejores servicios de calida, no solo en las pizzas sino tambien en tu entrega, sabiendo a tiempo real en que proceso se encuentra tu entrega.</p>
-                    <center>
-                    <a href="{{ route('register') }}" class="boton">Registrate</a></center>
+        <nav class="navbar navbar-expand-lg navbar-dark r menu">
+            <a class="navbar-brand" href="{{ ('/') }}"><h4>Pizza Shop</h4></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('login')}}">Ingrersar<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
+                    </li>
+                </ul>
+            </div>          
+        </nav>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="im/p.jpg" class="d-block w-100" alt="...">
                 </div>
-            </section>
-       
-            <div class="container mt-5">
-                <center><h1 class=" titulo2 mx-auto">Familiar</h1></center>
+
+              <div class="carousel-item">
+                <img src="im/4.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="im/p.jpg" class="d-block w-100" alt="...">
+              </div>
             </div>
-                <div class="container mt-5 mb-5">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <center><h1 class="mt-4">Pizzas Familiares</h1></center><hr>
+        <div class="container">
             <div class="row">
                 @foreach($posts as $post)
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12" >
-                        <img  src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top h-5 img-thumbnail img-fluid"  >
-                        <div class="card-body producto">
-                            <center><h2 class="card-title">{{ $post->nombre }}</h2>
-                                <center><h2 class="card-title">{{ $post->products->precio_venta}}</h2>
-                            <a href="{{route('user.order.create', ['id' => $post->id])}}" class="btn col-12 btn-danger com p-3">Ordenar</a></center>
-                        </div>
+                    <div class="card cad col-4">
+                        <img src="{{ asset('storage').'/'. $post->foto }}" class="card-img-top im mt-3" alt="...">
+                        <center><h3 class="card-title">{{ $post->nombre }}</h3></center>
+                        <center><h3>$ {{ $post->products->precio_venta}}</h3></center>
+                        <a href="{{route('user.order.create', ['id' => $post->id])}}" ><button class="mb-3 br col-12 p-3">Pedir</button></a></center>
                     </div>
                 @endforeach 
-            </div> 
-        </main>
-        <footer>
-            <div class="contenedor">
-                <h2 class="titulo-footer">Contactanos</h2>
-                <h3 class="subtitulo-footer">&copy;Pizza Shop</h3>
-                <h3 class="subtitulo-footer">pizzasho12@gmail.com</h3>
-                <h3 class="subtitulo-footer">3022839680</h3>
             </div>
-       
+        </div>
+        <footer class="mt-5 r p-2">
+            <div class="col-12 r text-white">
+                <h2 class="mb-2 pb-2">Pizza Shop</h2>
+                <h4 class="ml-2">pizzasho12@gmail.com</h4>
+                <h4 class="ml-2">3022839680</h4>
+                <p class="ml-2">&copy; Pizza Shop todos los derecchos reserbados</p>
+            </div>
         </footer>
     </body>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/submit.js') }}" defer></script>
 </html>
