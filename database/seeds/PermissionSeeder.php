@@ -206,9 +206,9 @@ class PermissionSeeder extends Seeder
         $permission_all[] = $permission->id;
 
         $permission = Permission::create([
-            'name' => 'Eliminar productos',
-            'slug' => 'products.destroy',
-            'description' => 'A user can destroy user',
+            'name' => 'Agregar existencia',
+            'slug' => 'products.add',
+            'description' => 'Agregar existencia',
         ]);
         
         $permission_all[] = $permission->id;
