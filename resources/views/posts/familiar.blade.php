@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
           <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -61,6 +63,9 @@
                 @endforeach 
             </div>
         </div>
+        <a href="https://api.whatsapp.com/send?phone=573022839680&text=Hola%20quisiera%20hablar%20con%20un%20asesor" class="float" target="_blank">
+          <h2 class="p-1">WhatsApp</h2>
+       </a>
         <footer class="mt-5 r p-2">
             <div class="col-12 r text-white">
                 <h2 class="mb-2 pb-2">Pizza Shop</h2>
