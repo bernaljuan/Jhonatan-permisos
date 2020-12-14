@@ -11,18 +11,23 @@
         <form method="POST" action="{{route("products.update", [$product])}}" class="p-3 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 mx-auto formulario">
             @method("PUT")
             @csrf
+            <label for="">Id:</label>
             <input required value="{{$product->nombre}}" autocomplete="off" name="nombre"
             class="col-12 inp mt-3 mb-3"
             type="text" placeholder="Id">
+            <label for="">Nombre:</label>
             <input required value="{{$product->descripcion}}" autocomplete="off" name="descripcion"
             class="col-12 inp mb-3"
             type="text" placeholder="Nombre">
+            <label for="">Precio de Compra:</label>
             <input required value="{{$product->precio_compra}}" autocomplete="off" name="precio_compra"
             class="col-12 inp mb-3"
             type="decimal(9,2)" placeholder="Precio de compra">
+            <label for="">Precio de Venta:</label>
             <input required value="{{$product->precio_venta}}" autocomplete="off" name="precio_venta"
             class="col-12 inp mb-3"
             type="decimal(9,2)" placeholder="Precio de venta">
+            Existencia
             <input required value="{{$product->existencia}}" autocomplete="off" name="existencia"
             class="col-12 inp mb-3"
             type="decimal(9,2)" placeholder="Existencia">
