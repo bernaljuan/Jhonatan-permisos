@@ -10,8 +10,8 @@
         </div>
         <form method="POST" class="formulario col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 mx-auto" action="{{route("products.store")}}">
             @csrf
-            <input required autocomplete="off" name="nombre" class="col-12 inp mt-3 mb-3" type="text" placeholder="Id">
-            <input required autocomplete="off" name="descripcion" class="col-12 inp mb-3" type="text" placeholder="Nombre">
+            <input required autocomplete="off" name="nombre" class="col-12 inp mt-3 mb-3" type="text" placeholder="Nombre">
+            <input required autocomplete="off" name="descripcion" class="col-12 inp mb-3" type="text" placeholder="Descripcion">
             <input required autocomplete="off" name="precio_compra" class="col-12 inp mb-3" type="decimal(9,2)" placeholder="Precio de compra">
             <input required autocomplete="off" name="precio_venta" class="col-12 inp mb-3" type="decimal(9,2)" placeholder="Precio de venta">
             <input required autocomplete="off" name="existencia" class="col-12 inp mb-3" type="decimal(9,2)" placeholder="Existencia">

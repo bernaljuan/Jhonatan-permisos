@@ -44,8 +44,8 @@
                         <li class="nav-item"> <a href="{{route('posts.index')}}" class="nav-link"> Publicar </a></li>
                     @endcan
                     
-                    @can('haveaccess','proveedor.order')
-                    <li class="nav-item"> <a href="{{route('proveedor.order')}}" class="nav-link"> Aprovar </a></li>
+                    @can('haveaccess','admin.order')
+                    <li class="nav-item"> <a href="{{route('admin.order')}}" class="nav-link"> Ordenes </a></li>
                      @endcan
                     </ul>
 

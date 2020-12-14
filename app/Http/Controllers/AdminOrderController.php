@@ -15,8 +15,7 @@ class AdminOrderController extends Controller
     public function index()
     {   
         $products = Product::all();
-        $orders = Order::with(['customer', 'status', 'products'])
-        ->where('status_proveedor_id', '=', 2)
+        $orders = Order::with(['customer', 'status', 'products'])   
         ->get();
         return view('admin.index', compact('orders', 'products'));
     }

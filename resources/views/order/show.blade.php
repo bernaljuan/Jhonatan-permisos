@@ -17,9 +17,11 @@
 	<div class="ml-3">
 		<strong>Orden ID: </strong> {{$order->id}} <br>
 		<strong>Tamaño: </strong>{{$order->size}} <br>
+		<strong>Valor a pagar: $</strong>{{$order->products->precio_venta * $order->cantidad }} <br>
 		<strong>Adiciones: </strong>{{$order->toppings}} <br>
 		@if($order->instructions != '')
 		<strong>Instrucciones: </strong>{{$order->instructions}}
+		
 		@endif
 	</div>
 	<hr>

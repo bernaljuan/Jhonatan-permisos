@@ -111,31 +111,31 @@ class PermissionSeeder extends Seeder
         $permission = Permission::create([
             'name' => 'Listar usuarios',
             'slug' => 'user.index',
-            'description' => 'A user can list user',
+            'description' => 'Listar usuarios',
         ]);
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Show user',
+            'name' => 'Mostrar usuario',
             'slug' => 'user.show',
-            'description' => 'A user can see user',
+            'description' => 'Mostrar usuario',
         ]);        
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Edit user',
+            'name' => 'Editar usuario',
             'slug' => 'user.edit',
-            'description' => 'A user can edit user',
+            'description' => 'Editar usuario',
         ]);
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Destroy user',
+            'name' => 'Eliminar usuario',
             'slug' => 'user.destroy',
-            'description' => 'A user can destroy user',
+            'description' => 'Eliminar usuario',
         ]);
         
         $permission_all[] = $permission->id;
@@ -175,31 +175,31 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'Lista de productos',
-            'slug' => 'articulos.index',
+            'slug' => 'products.index',
             'description' => 'A user can list user',
         ]);
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Crear articulo',
-            'slug' => 'articulos.create',
+            'name' => 'Crear producto',
+            'slug' => 'products.create',
             'description' => 'A user can see user',
         ]);        
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Edit articulos',
-            'slug' => 'articulos.edit',
+            'name' => 'Editar productos',
+            'slug' => 'products.edit',
             'description' => 'A user can edit user',
         ]);
         
         $permission_all[] = $permission->id;
         
         $permission = Permission::create([
-            'name' => 'Eliminar articulos',
-            'slug' => 'articulos.destroy',
+            'name' => 'Eliminar productos',
+            'slug' => 'products.destroy',
             'description' => 'A user can destroy user',
         ]);
 
@@ -208,7 +208,7 @@ class PermissionSeeder extends Seeder
         $permission = Permission::create([
             'name' => 'Lista de ordenes pendientes',
             'slug' => 'admin.order',
-            'description' => 'A user can list user',
+            'description' => 'Lista de ordenes pendientes',
         ]);
         
         $permission_all[] = $permission->id;
@@ -216,14 +216,9 @@ class PermissionSeeder extends Seeder
         $permission = Permission::create([
             'name' => 'Editar estado de orden',
             'slug' => 'admin.order.edit',
-            'description' => 'A user can see user',
+            'description' => 'Editar estado de orden',
         ]);
         
-        $permission = Permission::create([
-            'name' => 'Lista de ordenes proveedor',
-            'slug' => 'proveedor.order',
-            'description' => 'A user can list user',
-        ]);
 
         
     }
