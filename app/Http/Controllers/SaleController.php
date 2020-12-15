@@ -16,11 +16,11 @@ class SaleController extends Controller
     public function index()
     {
         $users = User::all();
-        $sales = Sale::with(['customer'])   
+        $sales = Sale::with(['customer'])
+        ->orderBy('created_at', 'desc')
         ->get();
         return view("sales.sales_index", compact('users' , 'sales'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
