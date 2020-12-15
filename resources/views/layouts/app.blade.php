@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark r shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ ('home') }}">
+                <a class="navbar-brand" href="{{ ('/') }}">
                     Pizza Shop
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,6 +33,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @can('haveaccess','role.index')
+                        <li class="nav-item"> <a href="{{route('home')}}" class="nav-link">Inicio</a></li>
+                    @endcan
                         @can('haveaccess','role.index')
                         <li class="nav-item"> <a href="{{route('role.index')}}" class="nav-link"> Roles</a></li>
                     @endcan
