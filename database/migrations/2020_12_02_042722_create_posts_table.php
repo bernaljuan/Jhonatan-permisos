@@ -23,8 +23,8 @@ class CreatePostsTable extends Migration
             $table->string('foto');
             $table->timestamps();
 
-            $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');;
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
         });
     }
 

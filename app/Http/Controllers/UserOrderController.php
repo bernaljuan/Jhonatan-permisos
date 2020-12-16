@@ -49,4 +49,31 @@ class UserOrderController extends Controller {
 	public function show(Order $order) {
 		return view('order.show', compact('order'));
 	}
+
+
+	public function edit(Order $order)
+    {
+        return view("order.edit", ["order" => $order,
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Order $order)
+    {
+        $order->fill($request->input());
+        $order->saveOrFail();
+        return redirect()->route("user.order")->with("mensaje", "Producto actualizado");
+	}
+	
+	public function destroy(Order $order)
+    {
+        $order->delete();
+        return redirect()->route("user.order")->with("mensaje", "Producto eliminado");
+    }
 }

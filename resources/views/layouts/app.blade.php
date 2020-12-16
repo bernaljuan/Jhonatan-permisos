@@ -110,3 +110,4 @@
     @yield('js')
 </body>
 </html>
+

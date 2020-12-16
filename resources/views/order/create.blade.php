@@ -7,7 +7,7 @@
 	<div class="r p-3 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12 titulo mx-auto mt-5">
 		<h1>Ordenar Pizza</h1>
 	</div>
-	<form method="POST" action="{{route('user.order.store')}}" class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12 formulario mx-auto">
+	<form method="POST" action="{{route('user.order.store')}}" class="formulario-crear col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12 formulario mx-auto">
 		{{csrf_field()}}
 		@if(session('status'))
 			<div class="alert alert-danger col-12">
@@ -23,6 +23,7 @@
 		<label><input type="radio" name="size" value="large" id="large"> Grande </label>
 		<label><input type="radio" name="size" value="extra-large" id="extra-large"> Extra grande </label><hr>
 		<label>Adicionales:</label><hr>
+		
 		<label class="checkbox-inline">
 			<input type="checkbox" name="toppings[]" value="pepperoni" id="pepperoni"> Pepperoni
 		</label>
@@ -41,7 +42,45 @@
 		<hr>
 		<input type="text" name="instructions" placeholder="Instrucciones especiales" class="col-12 inp mb-3">
 		<input type="text" name="cantidad" placeholder="Cantidad" class="col-12 inp mb-3" autofocus>
-		<button class="br col-12 p-3 mt-3 mb-3" type="submit">Ordenar Ahora</button>
+		<button class="br col-12 p-3 mt-3 mb-3" type="submit" onclick="return confirm('¿Esta seguro de confirmar su orden?');" > Hacer orden </button>
+
 	</form>
 </div>
+@endsection
+
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+
+	$('formulario-crear').submit(function(e){
+		e.preventDefault();
+		
+
+		Swal.fire({
+		title: 'Are you sure?',
+		text: "You won't be able to revert this!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		if (result.isConfirmed) {
+			Swal.fire(
+			'Deleted!',
+			'Your file has been deleted.',
+			'success'
+			)
+		}
+		})
+
+
+
+
+
+	});
+
+</script>
+
 @endsection

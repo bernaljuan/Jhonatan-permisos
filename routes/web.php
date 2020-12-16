@@ -48,6 +48,10 @@ Route::resource('/user', 'UserController', ['except'=>[
         Route::get('/order/create', 'UserOrderController@create')->name('user.order.create');
         Route::post('/order', 'UserOrderController@store')->name('user.order.store');
         Route::get('/order/{order}', 'UserOrderController@show')->name('user.order.show');
+        Route::get('/order/edit/{order}', 'UserOrderController@edit')->name('user.order.edit');
+        Route::put('/order/{order}', 'UserOrderController@update')->name('user.order.update');
+        Route::delete('/order/{order}', 'UserOrderController@destroy')->name('user.order.destroy');
+
     });
     
     // Admin Routes - make sure you implement an auth layer here

@@ -30,7 +30,7 @@ class CreateOrdersTable extends Migration {
 			$table->decimal("cantidad", 9, 0);
 			$table->foreignId('status_id')->unsigned()->default(1)->constrained();
 
-			$table->foreign('product_id')->references('id')->on('products');
+			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
 			
 			$table->timestamps();
